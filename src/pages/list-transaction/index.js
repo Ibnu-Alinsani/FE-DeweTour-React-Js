@@ -6,10 +6,12 @@ import admin from "../../assets/action-admin.png";
 import { API } from "../../config/api";
 
 export default function AdminList(props) {
+  document.title = "Table Transaction";
   const [show, setShow] = useState(false);
   const [idx, setIdx] = useState();
   const [data, setData] = useState();
   const [transac, setTransac] = useState();
+  
   const [search, setSearch] = useState("");
 
   const { data: trans, refetch } = useQuery("transactionsCache", async () => {

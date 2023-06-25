@@ -9,6 +9,7 @@ import UpdateTrip from "../../components/modal/update-trip";
 import { API } from "../../config/api";
 
 export default function Trip() {
+  document.title = "Trip Income";
   const [currentIndex, setCurrentIndex] = useState();
   const [idx, setIdx] = useState(0);
   const [open, setOpen] = useState(false);
@@ -123,29 +124,19 @@ export default function Trip() {
             {/* <PlaceTour /> */}
             {trip
               ?.map((locate) => {
-                const images = [
-                  locate.image,
-                  img.negara1,
-                  img.negara2,
-                  img.negara3,
-                ];
                 return (
                   <div className="card-locate position-relative">
-                    <Carousel fade interval={10000}>
-                      {images.map((e) => {
-                        return (
-                          <Carousel.Item slide="false">
-                            <img
-                              className="d-block w-100"
-                              src={e}
-                              alt="First slide"
-                              style={{
-                                objectFit: "cover",
-                              }}
-                            />
-                          </Carousel.Item>
-                        );
-                      })}
+                    <Carousel fade interval={10000} indicators={false} controls={false}>
+                      <Carousel.Item slide="false">
+                        <img
+                          className="d-block w-100"
+                          src={locate.image}
+                          alt="First slide"
+                          style={{
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Carousel.Item>
                     </Carousel>
                     <Link
                       to={`/detail-place/${locate.id}`}

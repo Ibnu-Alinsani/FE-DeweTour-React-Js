@@ -7,6 +7,8 @@ import { API } from "../../config/api";
 import { UserContext } from "../../context";
 
 export default function Profile(props) {
+
+  document.title = "Profile";
   const [state, _] = useContext(UserContext);
   const [fill, setFilter] = useState("");
   // const [image, setImage] = useState({

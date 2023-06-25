@@ -8,6 +8,7 @@ import { Button, Carousel, Container } from "react-bootstrap";
 import * as IMG from "../../assets";
 
 export default function LandingPages() {
+  document.title = "Home";
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -53,9 +54,9 @@ export default function LandingPages() {
           <CardPerformance />
         </div>
 
-        <h2 className="name-group">Group Tour</h2>
+        <h2 className="name-group" id="trip">Group Tour</h2>
 
-        <div className="locate" id="trip">
+        <div className="locate">
           {tourList?.length === 0 ? (
             <Container style={{ width: "40rem", marginLeft:"-9.5rem" }}>
               <img src={IMG.noTrip} alt="..." className="w-100 rounded" />
@@ -109,7 +110,7 @@ export default function LandingPages() {
                       className="text-decoration-none"
                     >
                       <div className="card-locate">
-                        <Carousel fade>
+                        <Carousel fade indicators={false} controls={false}>
                           <Carousel.Item>
                             <img
                               className="d-block w-100"

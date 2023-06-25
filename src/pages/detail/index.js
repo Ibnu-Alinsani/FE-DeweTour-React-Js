@@ -14,6 +14,7 @@ import { UserContext } from "../../context";
 import ModalImage from "../../components/modal/image-car";
 
 export default function Detail() {
+  document.title = "Detail Trip";
   useEffect(() => {
     window.scroll(0, 0);
   }, []);

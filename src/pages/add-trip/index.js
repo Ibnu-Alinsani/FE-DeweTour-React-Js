@@ -1,12 +1,13 @@
-import { useQuery, useMutation } from "react-query";
-import { Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useMutation, useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 
+import Swal from "sweetalert2";
 import * as MODAL from "../../components/modal";
 import { API } from "../../config/api";
-import Swal from "sweetalert2";
 
 export default function AddTrip() {
+  document.title = "Add Trip";
   const Navigate = useNavigate();
 
   const [modalShow, setModalShow] = useState(false);
@@ -238,19 +239,16 @@ export default function AddTrip() {
               ></textarea>
             </div>
             {/* image */}
+            <label>Image</label>
             <div className="input-box file">
-              <label>Image</label>
-              <label htmlFor="image">
-                <input
-                  type="file"
-                  id="image"
-                  name="image"
-                  className="file"
-                  multiple
-                  onChange={handleChange}
-                />
-                {/* <p className='text-avenir fw-900 fs-18 p-file'>Attach Here</p> */}
-              </label>
+              <input
+                type="file"
+                id="image"
+                name="image"
+                className="file image"
+                multiple
+                onChange={handleChange}
+              />
             </div>
             <div className="w-100 text-center">
               <button

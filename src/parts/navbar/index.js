@@ -43,7 +43,7 @@ export default function Navbar(props) {
     gender: "",
   });
 
-  const { data: user } = useQuery("userCache", async () => {
+  const { data: user, refetch } = useQuery("userCache", async () => {
     const response = await API.get("/user/" + state.user.id);
     return response.data.data;
   });

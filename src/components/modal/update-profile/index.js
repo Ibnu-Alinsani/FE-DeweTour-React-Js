@@ -14,13 +14,19 @@ function UpdateProfile(props) {
     email: "",
     phone: "",
     address: "",
-    image: "",
+    image_profil: "",
   });
+  console.log(form)
 
   const { data: editProfile } = useQuery("editProfile", async () => {
     const response = await API.get(`/user/${state.user.id}`);
-    setForm(response.data.data);
+    // setForm(response.data.data);
+    return response.data.data;
   });
+
+  useEffect(() => {
+    setForm(editProfile);
+  },[editProfile])
 
   function handleChange(e) {
     setForm({
@@ -51,7 +57,7 @@ function UpdateProfile(props) {
       formData.set("email", form.email);
       formData.set("phone", form.phone);
       formData.set("address", form.address);
-      formData.set("image", form.image[0], form.image[0]?.name);
+      formData.set("image", form.image_profil[0], form.image_profil[0].name);
       console.log(formData.getAll("fullname"));
       console.log(formData.getAll("email"));
       console.log(formData.getAll("no_handphone"));
@@ -110,7 +116,7 @@ function UpdateProfile(props) {
               <Form.Control
                 type="text"
                 name="fullname"
-                value={form.fullname}
+                value={form?.fullname}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -118,7 +124,7 @@ function UpdateProfile(props) {
             {/* email */}
             <Form.Group className="mb-3" controlId="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" name="email" value={form.email} onChange={handleChange} />
+              <Form.Control type="email" name="email" value={form?.email} onChange={handleChange} />
             </Form.Group>
 
             {/* phone */}
@@ -127,7 +133,7 @@ function UpdateProfile(props) {
               <Form.Control
                 type="number"
                 name="phone"
-                value={form.phone}
+                value={form?.phone}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -139,7 +145,7 @@ function UpdateProfile(props) {
                 as="textarea"
                 rows={3}
                 name="address"
-                value={form.address}
+                value={form?.address}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -147,7 +153,7 @@ function UpdateProfile(props) {
             {/* image */}
             <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Upload image</Form.Label>
-              <Form.Control type="file" name="image" onChange={handleChange} />
+              <Form.Control type="file" name="image_profil" onChange={handleChange} />
             </Form.Group>
             <Button
               variant="warning"

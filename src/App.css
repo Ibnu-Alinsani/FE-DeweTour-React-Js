@@ -1,7 +1,7 @@
 @import url("https://fonts.cdnfonts.com/css/avenir");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.cdnfonts.com/css/product-sans");
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -10,7 +10,7 @@ html {
 #root {
   width: 98.79vw;
   /* background-color: #e5e5e5; */
-  overflow-x: hidden !important; 
+  overflow-x: hidden !important;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
   width: fit-content;
   padding: 0;
   margin: 0;
-  overflow-x: hidden !important; 
+  overflow-x: hidden !important;
 }
 
 main {
@@ -40,7 +40,7 @@ nav.nav {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0; 
+  right: 0;
   z-index: 99;
 }
 
@@ -119,7 +119,6 @@ nav.nav {
   right: 0;
 }
 
-
 .close {
   position: absolute;
   top: 1rem;
@@ -161,11 +160,11 @@ nav.nav {
   flex-direction: column;
   align-items: center;
   font-size: 18px;
-  color: black ;
+  color: black;
 }
 
 .input-box input {
-  padding: 0 5px;
+  padding: 10px 5px;
   width: 90%;
   height: 40px;
   background-color: #e5e5e556;
@@ -174,6 +173,13 @@ nav.nav {
   font-family: "Avenir", sans-serif;
   outline: none;
   border: none;
+}
+
+.input-box textarea {
+  background-color: #c4c4c4;
+  font-size: 1rem;
+  padding: 5px;
+  border: 2px solid #b1b1b1 !important;
 }
 
 .alert-login {
@@ -187,7 +193,7 @@ nav.nav {
 }
 
 .alert-login {
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
   font-weight: 500;
   font-size: 24px;
   color: red;
@@ -209,7 +215,7 @@ nav.nav {
   border: none;
   border-radius: 5px;
   font-family: "Avenir", sans-serif;
-  font-size:  1rem !important;
+  font-size: 1rem !important;
   cursor: pointer;
   margin-bottom: 2rem;
 }
@@ -364,8 +370,8 @@ nav.nav {
 .card-locate {
   width: 350px;
   height: auto;
-  padding-right: .75rem;
-  padding-left: .75rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   border-radius: 5px;
   padding-top: 11px;
   background-color: white;
@@ -383,7 +389,6 @@ nav.nav {
   height: 230px;
   border-radius: 5px;
 }
-
 
 .carousel-container {
   border-radius: 5px;
@@ -416,9 +421,9 @@ nav.nav {
 .quota-tour {
   position: absolute;
   top: 1.5rem;
-  right: .5rem;
+  right: 0.5rem;
   background-color: white;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5px 0 0 5px;
   font-weight: 700;
   z-index: 1 !important;
@@ -441,7 +446,7 @@ nav.nav {
   font-weight: 900;
   font-size: 18px;
   color: #ffaf00;
-  margin-left: -.6rem !important;
+  margin-left: -0.6rem !important;
 }
 
 .locate-country {
@@ -449,7 +454,7 @@ nav.nav {
   font-size: 18px;
   color: #878787;
   margin-top: -5px;
-  margin-right: -.6rem !important;
+  margin-right: -0.6rem !important;
 }
 
 .inform {
@@ -484,9 +489,9 @@ nav.nav {
   font-family: "Avenir", sans-serif;
 }
 .text-roboto {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-.fw-400{
+.fw-400 {
   font-weight: 400;
 }
 .fw-700 {
@@ -587,7 +592,7 @@ nav.nav {
   align-items: center;
 }
 
-.slot{
+.slot {
   font-family: "Product Sans", sans-serif;
 }
 
@@ -619,7 +624,7 @@ nav.nav {
   height: 3rem;
   margin-top: 2rem;
   margin-bottom: -2rem;
-  border-bottom: 1px solid #F7941E;
+  border-bottom: 1px solid #f7941e;
 }
 
 .btn-count-add,
@@ -643,7 +648,7 @@ nav.nav {
   align-items: center;
   height: 3rem;
   margin-top: 0;
-  border-bottom: 1px solid #F7941E;
+  border-bottom: 1px solid #f7941e;
 }
 
 .container-btn-book {
@@ -692,19 +697,18 @@ nav.nav {
 .navbar-crop {
   width: 100vw;
   object-fit: cover;
-  position: absolute  ;
+  position: absolute;
   top: 0;
   filter: brightness(50%);
   z-index: -1;
 }
-
 
 /* booking */
 
 .container-booking {
   width: 100%;
   height: 100vh;
-  padding:7rem 10rem 5rem;
+  padding: 7rem 10rem 5rem;
   box-sizing: border-box;
 }
 
@@ -757,7 +761,7 @@ nav.nav {
   background: rgb(247, 209, 209);
   width: fit-content;
   border-radius: 2px;
-  color: #EC7A7A;
+  color: #ec7a7a;
   font-size: 12px;
   font-weight: 500;
 }
@@ -810,7 +814,7 @@ nav.nav {
   padding: 0;
 }
 
-.wrapper-table-info-user th, 
+.wrapper-table-info-user th,
 .wrapper-table-info-user td {
   border-bottom: 1px solid black;
   text-align: start;
@@ -877,9 +881,8 @@ nav.nav {
   width: 13rem;
 }
 
-
 .total-booking p {
-  margin-right: 2rem; 
+  margin-right: 2rem;
 }
 
 .btn-pay {
@@ -943,7 +946,7 @@ nav.nav {
 .photo-user {
   display: flex;
   flex-direction: column;
-} 
+}
 
 .photo-user img {
   width: 280px;
@@ -1011,11 +1014,12 @@ nav.nav {
   border-radius: 5px;
 }
 
-.table-transactions th, .table-transactions td {
-  border-bottom: 2px solid #C4C4C4;
+.table-transactions th,
+.table-transactions td {
+  border-bottom: 2px solid #c4c4c4;
   text-align: start;
   padding: 1.2rem 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .table-transactions th {
   font-weight: 700;
@@ -1023,7 +1027,7 @@ nav.nav {
 }
 
 .table-transactions tr:nth-child(even) {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .btn-popup-transactions {
@@ -1042,10 +1046,12 @@ nav.nav {
   padding: 1rem 7rem;
   position: fixed;
   top: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.approve-payment, .cancel-payment, .wait-payment {
+.approve-payment,
+.cancel-payment,
+.wait-payment {
   margin-top: 2.7rem;
   width: 112px;
   height: 25px;
@@ -1053,22 +1059,22 @@ nav.nav {
   line-height: 25px;
   border-radius: 5px;
   font-weight: 500;
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
   font-size: 12px;
 }
 
 .approve-payment {
   background-color: #bdffd8;
-  color: #0BDC5F;
+  color: #0bdc5f;
 }
 
 .cancel-payment {
   background-color: #ffb8b8;
-  color: #FF0742;
+  color: #ff0742;
 }
 
 .wait-payment {
-  color: #F7941E;
+  color: #f7941e;
   background-color: #ffd19a;
   line-height: 6px;
 }
@@ -1082,11 +1088,11 @@ nav.nav {
   margin: 1rem 0;
 }
 
-.approve-btn button { 
+.approve-btn button {
   width: 100px;
   height: 35px;
   border-radius: 5px;
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
   font-size: 18px;
   font-weight: 800;
   color: white;
@@ -1094,11 +1100,11 @@ nav.nav {
 
 .approve-btn .cancel {
   margin-right: 2rem;
-  background: #FF0742;
+  background: #ff0742;
 }
 
 .approve-btn .approve {
-  background: #0ACF83;
+  background: #0acf83;
 }
 
 .total-booking-p {
@@ -1125,15 +1131,15 @@ nav.nav {
   align-items: center;
   margin: 0 10rem;
 }
- /* margin-left: 7rem; */
+/* margin-left: 7rem; */
 
 .link-add-trip {
   height: 40px;
   width: 150px;
-  background: #FFAF00;
+  background: #ffaf00;
   color: white;
   border-radius: 5px;
-  font-family: 'Avenir';
+  font-family: "Avenir";
   font-weight: 800;
   font-size: 18px;
   /* display: flex;
@@ -1160,11 +1166,10 @@ nav.nav {
   /* border: 1px solid black; */
 }
 .wrapper-add-trip label {
-  font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
   font-weight: 900;
   font-size: 24px;
   color: black;
-  
 }
 .input-box {
   margin-bottom: 1.5rem;
@@ -1173,7 +1178,7 @@ nav.nav {
 .input-box input {
   background: rgb(196, 196, 196);
   width: 100%;
-  border: 2px solid #B1B1B1;
+  border: 2px solid #b1b1b1;
   padding: 1rem;
   font-size: 1.2rem;
   padding: 1.5rem 1rem;
@@ -1183,8 +1188,8 @@ nav.nav {
   width: 100%;
   height: 49px;
   border-radius: 5px;
-  background: linear-gradient(0deg, #B1B1B1, #B1B1B1),
-  linear-gradient(0deg, rgba(196, 196, 196, 0.5), rgba(196, 196, 196, 0.5));
+  background-color: #c4c4c4;
+  border: 2px solid #b1b1b1 !important;
   color: black;
   font-size: 1.2rem;
   padding: 0 1rem;
@@ -1194,9 +1199,8 @@ nav.nav {
   display: flex;
 }
 
-.input-box-duration-day, 
+.input-box-duration-day,
 .input-box-duration-night {
-  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -1217,14 +1221,6 @@ nav.nav {
   border: none;
 }
 
-.input-box.file input {
-  /* margin-top: 1rem;
-  /* border: 1px solid black; */
-  /* back  */
-  /* visibility: hidden; */ 
-}
-
-
 .p-file {
   position: absolute;
   top: 57%;
@@ -1234,14 +1230,14 @@ nav.nav {
 .input-box.file img {
   position: absolute;
   right: 2%;
-  bottom:10%;
+  bottom: 10%;
 }
 
 .btn-add-trip {
   margin-top: 3rem;
   width: 250px;
   height: 40px;
-  background-color: #F7941E;
+  background-color: #f7941e;
   color: white;
   border-radius: 5px;
   border: none;
@@ -1253,9 +1249,9 @@ nav.nav {
   margin-top: 1.5rem;
 }
 
-.img-detail img{
+.img-detail img {
   height: 25rem !important;
-  width: 100%  !important;
+  width: 100% !important;
   object-fit: fill;
   border-radius: 5px;
 }
@@ -1263,7 +1259,7 @@ nav.nav {
 .img-group-detail {
   height: 13rem;
   width: 23rem;
-} 
+}
 
 .container-img-group {
   gap: 1rem;
