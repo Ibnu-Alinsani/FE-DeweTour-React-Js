@@ -63,18 +63,23 @@ function App() {
   };
 
   function PrivateRouteAdmin(props) {
-    if (props.login != "admin") {
+    if (props.login !== "admin") {
+      Swal.fire({
+        title: "Warning",
+        text: `You don't have permission`,
+        icon: "warning",
+      });
       return <Navigate to="/" replace />;
     }
     return <Outlet />;
   }
 
   function PrivateRouteUser(props) {
-    if (props.login != "user") {
+    if (props.login !== "user") {
       Swal.fire({
-        title: "Error",
+        title: "Warning",
         text: `You Must be Login First`,
-        icon: "error",
+        icon: "warning",
       });
       return <Navigate to="/" replace />;
     }
