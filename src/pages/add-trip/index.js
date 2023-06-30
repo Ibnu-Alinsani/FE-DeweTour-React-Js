@@ -3,7 +3,7 @@ import { useMutation, useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
-import * as MODAL from "../../components/modal";
+import * as MODAL from "../../components";
 import { API } from "../../config/api";
 
 export default function AddTrip() {
@@ -106,7 +106,11 @@ export default function AddTrip() {
 
   return (
     <>
-      <MODAL.country show={modalShow} onHide={() => setModalShow(false)} modal={setModalShow}/>
+      <MODAL.country
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        modal={setModalShow}
+      />
 
       <div className="container-add-trip">
         <h1 className="title-add-trip text-avenir fw-800 fs-36 text-black">

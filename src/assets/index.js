@@ -13,6 +13,14 @@ import name from "./name.png";
 import phone from "./phone.png";
 import profil from "./profil.jpg";
 import qr from "./qr.png";
+import icon from "./Icon.svg";
+import close from "./close.svg";
+import hibiscus from "./hibiscus.png";
+import list from "./list.png";
+import logout from "./logout.png";
+import palm from "./palm.png";
+import profile from "./profile.png";
+import trip from "./trip.png";
 
 export {
   negara1,
@@ -30,4 +38,12 @@ export {
   phone,
   profil,
   qr,
+  icon,
+  close,
+  hibiscus,
+  list,
+  logout,
+  palm,
+  profile,
+  trip,
 };

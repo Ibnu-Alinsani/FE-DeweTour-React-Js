@@ -1,26 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import icon from "../../assets/Icon.svg";
-import close from "../../assets/close.svg";
+import { useMutation, useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import Dropdown from "rsuite/Dropdown";
-import profile from "../../assets/profile.png";
-import profil from "../../assets/profil.jpg";
-import bill from "../../assets/bill.png";
-import logout from "../../assets/logout.png";
-import trip from "../../assets/trip.png";
-import adminPhoto from "../../assets/admin.jpg";
-import palm from "../../assets/palm.png";
-import hibiscus from "../../assets/hibiscus.png";
-import list from "../../assets/list.png";
 import "rsuite/dist/rsuite.min.css";
-import { useMutation, useQuery } from "react-query";
+import * as IMG from "../../assets";
 import { API, setAuthToken } from "../../config/api";
-import jwt_decode from "jwt-decode";
 
 import { Button } from "react-bootstrap";
-import { useCol } from "react-bootstrap/esm/Col";
-import { UserContext } from "../../context";
 import Swal from "sweetalert2";
+import { UserContext } from "../../context";
 
 export default function Navbar(props) {
   useEffect(() => {
@@ -28,8 +16,8 @@ export default function Navbar(props) {
   }, []);
 
   const [showAlert, setShowAlert] = useState(false);
-  const [register, setRegister] = useState();
-  const [img, setImg] = useState();
+  // const [register, setRegister] = useState();
+  // const [img, setImg] = useState();
   const [imgShow, setImgShow] = useState(false);
 
   const [state, dispatch] = useContext(UserContext);
@@ -167,15 +155,14 @@ export default function Navbar(props) {
 
   useEffect(() => {
     const icon = document.querySelector(".rs-btn");
-    // console.log(icon, "ini icon");
     if (icon) {
       if (user?.role == "user") {
         icon.style.backgroundImage = `url(${
-          user?.image ? user?.image : profil
+          user?.image ? user?.image : IMG.profil
         })`;
         icon.style.zIndex = "2";
       } else {
-        icon.style.backgroundImage = `url(${profil})`;
+        icon.style.backgroundImage = `url(${IMG.profil})`;
         icon.style.zIndex = "2";
       }
     }
@@ -230,7 +217,7 @@ export default function Navbar(props) {
     <>
       <nav className="nav">
         <Link to="/">
-          <img src={icon} alt="Dewe Tour" className="icon" />
+          <img src={IMG.icon} alt="Dewe Tour" className="icon" />
         </Link>
         <div className="profil">
           <Dropdown title="" trigger={"hover"}>
@@ -240,7 +227,7 @@ export default function Navbar(props) {
                 style={styleLink}
                 className="fs-18 fw-700 text-pr-sans link-dropdown"
               >
-                <img src={trip} alt="profile" className="icon-dropdown" />
+                <img src={IMG.trip} alt="profile" className="icon-dropdown" />
                 <button
                   style={styleLink}
                   className="btn-logout fs-18 fw-700 text-pr-sans"
@@ -255,7 +242,7 @@ export default function Navbar(props) {
                 style={styleLink}
                 className="fs-18 fw-700 text-pr-sans link-dropdown"
               >
-                <img src={list} alt="profile" className="icon-dropdown" />
+                <img src={IMG.list} alt="profile" className="icon-dropdown" />
                 <button
                   style={styleLink}
                   className="btn-logout fs-18 fw-700 text-pr-sans"
@@ -266,7 +253,7 @@ export default function Navbar(props) {
             </Dropdown.Item>
             <hr />
             <Dropdown.Item>
-              <img src={logout} alt="logout" className="icon-dropdown" />
+              <img src={IMG.logout} alt="logout" className="icon-dropdown" />
               <button
                 style={styleLink}
                 className="btn-logout fs-18 fw-700 text-pr-sans"
@@ -283,7 +270,7 @@ export default function Navbar(props) {
     <>
       <nav className="nav">
         <Link to="/">
-          <img src={icon} alt="Dewe Tour" className="icon" />
+          <img src={IMG.icon} alt="Dewe Tour" className="icon" />
         </Link>
         <div className="profil">
           <Dropdown title="" trigger={"hover"}>
@@ -293,7 +280,11 @@ export default function Navbar(props) {
                 style={styleLink}
                 className="fs-18 fw-700 text-pr-sans link-dropdown"
               >
-                <img src={profile} alt="profile" className="icon-dropdown" />
+                <img
+                  src={IMG.profile}
+                  alt="profile"
+                  className="icon-dropdown"
+                />
                 <button
                   style={styleLink}
                   className="btn-logout fs-18 fw-700 text-pr-sans"
@@ -303,7 +294,7 @@ export default function Navbar(props) {
               </Link>
             </Dropdown.Item>
             <Dropdown.Item>
-              <img src={logout} alt="logout" className="icon-dropdown" />
+              <img src={IMG.logout} alt="logout" className="icon-dropdown" />
               <button
                 style={styleLink}
                 className="btn-logout fs-18 fw-700 text-pr-sans"
@@ -320,7 +311,7 @@ export default function Navbar(props) {
     <>
       <nav className="nav">
         <Link to="/">
-          <img src={icon} alt="Dewe Tour" className="icon" />
+          <img src={IMG.icon} alt="Dewe Tour" className="icon" />
         </Link>
         <div className="btn-contain">
           <Button
@@ -362,10 +353,10 @@ export default function Navbar(props) {
             <></>
           )}
           <button className="close" onClick={hiddenLogin}>
-            <img src={close} alt="close" />
+            <img src={IMG.close} alt="close" />
           </button>
-          <img src={palm} alt="" className="palm" />
-          <img src={hibiscus} alt="hibiscus" className="hibiscus" />
+          <img src={IMG.palm} alt="" className="palm" />
+          <img src={IMG.hibiscus} alt="hibiscus" className="hibiscus" />
           <h1>Login</h1>
 
           <form
@@ -410,10 +401,10 @@ export default function Navbar(props) {
       <div className="container-form-register">
         <div className="form-box form-box-register">
           <button className="close" onClick={hiddenRegister}>
-            <img src={close} alt="close" />
+            <img src={IMG.close} alt="close" />
           </button>
-          <img src={palm} alt="" className="palm" />
-          <img src={hibiscus} alt="hibiscus" className="hibiscus" />
+          <img src={IMG.palm} alt="" className="palm" />
+          <img src={IMG.hibiscus} alt="hibiscus" className="hibiscus" />
           <h1>Register</h1>
           <form
             className="form"

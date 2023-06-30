@@ -4,7 +4,6 @@ import * as React from "react";
 import * as img from "../../../assets";
 
 function ModalImage(props) {
-  
   const images = [img.negara1, img.negara2, img.negara3];
 
   return (
@@ -15,14 +14,11 @@ function ModalImage(props) {
       centered
     >
       {/* Carousel bootstrap */}
-      <Carousel
-        activeIndex={props.idx}
-        onSelect={props.handleSelect}
-        >
-        {images.map((e) => {
+      <Carousel activeIndex={props.idx} onSelect={props.handleSelect}>
+        {images.map((e, idx) => {
           return (
-            <Carousel.Item>
-              <img src={e} alt="..."/>
+            <Carousel.Item key={idx}>
+              <img src={e} alt="..." />
             </Carousel.Item>
           );
         })}

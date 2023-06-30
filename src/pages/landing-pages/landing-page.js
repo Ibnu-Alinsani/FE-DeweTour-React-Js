@@ -6,6 +6,9 @@ import { useQuery } from "react-query";
 import { API } from "../../config/api";
 import { Button, Carousel, Container } from "react-bootstrap";
 import * as IMG from "../../assets";
+import { useDispatch, useSelector } from "react-redux";
+import { getTrip } from "../../redux/actions/trip";
+import * as COMP from "../../components";
 
 export default function LandingPages() {
   document.title = "Home";
@@ -16,11 +19,20 @@ export default function LandingPages() {
   const [search, setSearch] = useState("");
   const [tourList, setTourList] = useState();
 
-  const { data: trip, refetch } = useQuery("tripCache", async () => {
+  const { data } = useQuery("tripCache", async () => {
     const response = await API.get("/trips");
     setTourList(response.data.data);
-    console.log(response);
   });
+
+  const { getTripLoading, getTripResult, getTripError } = useSelector(
+    (state) => state.trip
+  );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTrip());
+  }, [dispatch]);
 
   return (
     <div className="container-fluid" style={{ padding: "0" }}>
@@ -31,7 +43,7 @@ export default function LandingPages() {
           </p>
         </div>
         <div className="bar-search">
-          <label className="label-search" htmlFor="searc">
+          <label className="label-search" htmlFor="search">
             Find Great Places to Holiday
           </label>
           <div className="input-search">
@@ -54,99 +66,10 @@ export default function LandingPages() {
           <CardPerformance />
         </div>
 
-        <h2 className="name-group" id="trip">Group Tour</h2>
-
-        <div className="locate">
-          {tourList?.length === 0 ? (
-            <Container style={{ width: "40rem", marginLeft:"-9.5rem" }}>
-              <img src={IMG.noTrip} alt="..." className="w-100 rounded" />
-            </Container>
-          ) : (
-            tourList
-              ?.filter((locate) => {
-                if (search === "") {
-                  return locate;
-                } else if (
-                  locate.Country.name
-                    .toLowerCase()
-                    .includes(search.toLowerCase())
-                ) {
-                  return locate;
-                } else if (
-                  locate.transportation
-                    .toLowerCase()
-                    .includes(search.toLowerCase())
-                ) {
-                  return locate;
-                } else if (
-                  locate.accomodation
-                    .toLowerCase()
-                    .includes(search.toLowerCase())
-                ) {
-                  return locate;
-                } else if (
-                  locate.date_trip.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return locate;
-                } else if (
-                  locate.title.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return locate;
-                } else {
-                  <Container className="w-100">
-                    <img
-                      src={IMG.noTrip}
-                      alt="..."
-                      className="w-100 rounded-5"
-                    />
-                  </Container>;
-                }
-              })
-              .map((locate) => {
-                if (locate.current_quota != 0) {
-                  return (
-                    <Link
-                      to={`/detail-place/${locate.id}`}
-                      className="text-decoration-none"
-                    >
-                      <div className="card-locate">
-                        <Carousel fade indicators={false} controls={false}>
-                          <Carousel.Item>
-                            <img
-                              className="d-block w-100"
-                              src={locate.image}
-                              alt="First slide"
-                              loading="lazy"
-                            />
-                          </Carousel.Item>
-                        </Carousel>
-                        <div className="carousel-container">
-                          <div>
-                            <p className="quota-tour">{locate.current_quota}</p>
-                            <h2 className="locate-name text-decoration-none">
-                              {locate.title.substr(0, 23)}...
-                            </h2>
-                            <div className="inform">
-                              <p className="locate-price text-decoration-none">
-                                {new Intl.NumberFormat("id-ID", {
-                                  style: "currency",
-                                  currency: "IDR",
-                                }).format(locate.price)}
-                              </p>
-                              <p className="locate-country">
-                                {locate.Country.name}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                }
-              })
-              .reverse()
-          )}
-        </div>
+        <h2 className="name-group" id="trip">
+          Group Tour
+        </h2>
+        <COMP.ListTour search={search} />
       </div>
     </div>
   );

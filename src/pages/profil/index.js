@@ -2,12 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useQuery } from "react-query";
 import * as IMG from "../../assets";
-import * as COMP from "../../components/modal";
+import * as COMP from "../../components";
 import { API } from "../../config/api";
 import { UserContext } from "../../context";
 
 export default function Profile(props) {
-
   document.title = "Profile";
   const [state, _] = useContext(UserContext);
   const [fill, setFilter] = useState("");
@@ -70,11 +69,7 @@ export default function Profile(props) {
             </div>
             <div className="photo-user">
               <img
-                src={
-                  user?.image != ""
-                    ? user?.image
-                    : IMG.profil
-                }
+                src={user?.image != "" ? user?.image : IMG.profil}
                 alt="..."
               />
             </div>
