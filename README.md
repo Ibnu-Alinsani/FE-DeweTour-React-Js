@@ -1,7 +1,7 @@
 I Develop this project within 3 week with 
 Technology React Js for client side and framework echo for server side
 
-I made this from my weeekly project in Dumbways.id bootcamp
+I made this from my weekly project in Dumbways.id bootcamp
 and this is my first time, i made full website 
 
 This Project "DeweTour" was build for easy accesibility user who have habbit travel
